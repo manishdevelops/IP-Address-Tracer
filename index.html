@@ -15,20 +15,31 @@
   </style>
 </head>
 <body>
+  <header>
+    <h1 class="header__heading">IP Address Tracker</h1>
+    <form>
+      <label for="ip"></label>
+      <input type="text" id="header__input" name="ip">
+      <button class="header__submit" type="submit">
+        <img class="header__arrow" src="/src/assets/images/icon-arrow.svg" alt="arrow-icon">
+      </button>
+    </form>
+    <div class="header__trace-info"></div>
+  </header>
 
-  IP Address Tracker
 
+<!-- 
   Search for any IP address or domain
 
   IP Address
   Location
   Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
-  
-  <div class="attribution">
+    UTC  add offset value dynamically using the API -->
+  <!-- ISP
+   -->
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
 </html>

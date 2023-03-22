@@ -1,0 +1,56 @@
+@use 'variables' as var;
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+header {
+    background: url('/src/assets/images/pattern-bg-mobile.png') no-repeat 0 0 / cover;
+    @media (min-width: 992px) {
+        background: url('/src/assets/images/pattern-bg-desktop.png') no-repeat 0 0 / cover;
+    }
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 2.5rem;
+    // padding-inline: 2rem;
+}
+
+.header__heading {
+    font-weight: 500;
+    color: #fff;
+    font-size: 1.7rem;
+}
+
+form {
+    margin-block-start: 1.5rem;
+    #header__input {
+        width:68vw;
+        padding-block: .8rem; 
+        outline: none;
+        border: none;
+        padding-inline-start: 2rem;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        font-size: 1.5rem;
+    }
+
+    .header__submit {
+        all: unset;
+        background-color: black;
+        padding-block: 1.1rem; 
+        padding-inline: 1.5rem;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        position: relative;
+        left: -5px;
+        top: -2.5px;
+        font-weight: 600;
+    }
+}
