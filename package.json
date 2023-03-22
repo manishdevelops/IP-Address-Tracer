@@ -1,0 +1,16 @@
+{
+  "name": "ip-address-tracker-master",
+  "version": "1.0.0",
+  "description": "IP address tracker coding challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Manish Mandal",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3"
+  }
+}
