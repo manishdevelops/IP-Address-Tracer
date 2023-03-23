@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | IP Address Tracker</title>
-  <link rel="stylesheet" href="/src/assets/sass/main.scss">
+  <link rel="stylesheet" href="/src/assets/sass/index.scss">
   <script type="module" src="/src/js/controller.js"></script>
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -19,24 +19,35 @@
     <h1 class="header__heading">IP Address Tracker</h1>
     <form>
       <label for="ip"></label>
-      <input type="text" id="header__input" name="ip">
+      <input type="text" id="header__input" name="ip" placeholder="Search for any IP address or domain">
       <button class="header__submit" type="submit">
         <img class="header__arrow" src="/src/assets/images/icon-arrow.svg" alt="arrow-icon">
       </button>
     </form>
-    <div class="header__trace-info"></div>
+    <div class="header__tracer-info">
+      <div class="header__ip-container">
+        <h2 class="header__tracer-ip-heading">IP Address</h2>
+        <p class="header__tracer-ip">192.168.29.239</p>
+      </div>
+      <div class="header__location-container">
+        <h2 class="header__tracer-location-heading">Location</h2>
+        <p class="header__tracer-location">Centreville, US 20120</p>
+      </div>
+      <div class="header__timezone-container">
+        <h2 class="header__tracer-timezone-heading">Timezone</h2>
+        <p class="header__tracer-timezone">UTC -04:00</p>
+      </div>
+
+      <div class="header__ISP-container">
+        <h2 class="header__tracer-ISP-heading">isp</h2>
+        <p class="header__tracer-ISP">SpaceX Starlink</p>
+      </div>
+    </div>
   </header>
 
 
 <!-- 
-  Search for any IP address or domain
-
-  IP Address
-  Location
-  Timezone
     UTC  add offset value dynamically using the API -->
-  <!-- ISP
-   -->
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.

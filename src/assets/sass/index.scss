@@ -14,18 +14,22 @@ header {
     @media (min-width: 992px) {
         background: url('/src/assets/images/pattern-bg-desktop.png') no-repeat 0 0 / cover;
     }
-    height: 40vh;
+    height: 42vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-block: 2.5rem;
-    // padding-inline: 2rem;
+    padding-block: 2rem;
 }
 
 .header__heading {
     font-weight: 500;
     color: #fff;
     font-size: 1.7rem;
+}
+
+::placeholder {
+    font-size: .8rem;
+    font-weight: 500;
 }
 
 form {
@@ -35,7 +39,7 @@ form {
         padding-block: .8rem; 
         outline: none;
         border: none;
-        padding-inline-start: 2rem;
+        padding-inline-start: 1.5rem;
         border-top-left-radius: 15px;
         border-bottom-left-radius: 15px;
         font-size: 1.5rem;
@@ -45,7 +49,7 @@ form {
         all: unset;
         background-color: black;
         padding-block: 1.1rem; 
-        padding-inline: 1.5rem;
+        padding-inline: 6vw;
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
         position: relative;
@@ -53,4 +57,31 @@ form {
         top: -2.5px;
         font-weight: 600;
     }
+}
+
+.header__tracer-info {
+    width: 82vw;
+    background-color: #fff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: 1.5rem;
+    h2 {
+        font-size: .7rem;
+        color: var.$Dark-Gray;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    div {
+        margin-block-start: 1rem;
+        line-height: 1.6;
+        font-size: 1.1rem;
+    }
+    p {
+        font-weight: 600;
+    }
+
 }
