@@ -1,9 +1,14 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import * as model from './model.js';
-import { API_KEY } from '/apikey.js';
-import inputView from './inputView.js';
-const controlTracer = async function () {};
+import traceView from './traceView.js';
+import inputView from './traceView.js';
+
+const controlTracer = async function (ip) {
+	await model.loadData(ip);
+	traceView.render(model.state);
+	console.log(ip);
+};
 
 const init = function () {
 	inputView.addHandlerInput(controlTracer);
