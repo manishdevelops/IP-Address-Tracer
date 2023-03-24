@@ -31,14 +31,14 @@ header {
 }
 
 ::placeholder {
-    font-size: clamp(0.8rem, 0.694rem + 0.451vw, 1.1rem);
+    font-size: clamp(0.6rem, 0.302rem + 1.702vw, 1.1rem);
 }
 
 form {
     margin-block-start: 1.5rem;
     #header__input {
         width: min(500px, 68vw);
-        padding-block: clamp(0.8rem, 0.659rem + 0.601vw, 1.2rem); 
+        padding-block: clamp(0.6rem, 0.455rem + 0.828vw, 1.2rem);
         outline: none;
         border: none;
         padding-inline-start: 1.5rem;
@@ -82,9 +82,11 @@ form {
     padding-inline: 1rem;
     @media (min-width: 992px) {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+        // grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 100%;
         justify-content: center;
+        // justify-items: center;
         gap: 1rem;
         align-items: baseline;
         text-align: start;
@@ -116,5 +118,23 @@ form {
         @media (min-width: 992px) {
             font-weight: 600;
         }
+    }
+}
+
+.header__loader-container {
+    display: flex;
+    justify-content: center;
+    .header__tracer-loader {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.header__tracer-error {
+    .header__tracer-errorIcon {
+        fill: red;
+    }
+    .errorMessage {
+        color: var.$Dark-Gray;
     }
 }

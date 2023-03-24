@@ -1,16 +1,27 @@
 import 'core-js/stable';
+import 'boxicons';
 import 'regenerator-runtime/runtime';
 import * as model from './model.js';
 import traceView from './traceView.js';
 import inputView from './traceView.js';
 
 const controlTracer = async function (ip) {
-	await model.loadData(ip);
-	traceView.render(model.state);
-	console.log(ip);
+	try {
+		traceView.renderSpinner();
+		await model.loadData(ip);
+		traceView.render(model.state);
+		console.log(ip);
+	} catch (err) {
+		console.log(err);
+		traceView.renderTimeoutError(err);
+	}
 };
 
 const init = function () {
+	// default
+	controlTracer('');
+
+	//search
 	inputView.addHandlerInput(controlTracer);
 };
 
