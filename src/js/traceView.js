@@ -10,14 +10,12 @@ class InputView {
 		const markup = this._generateMarkup(this._data);
 		this._clear();
 		this._parentElement.insertAdjacentHTML('beforeend', markup);
-		console.log(markup);
 	}
 	addHandlerInput(handler) {
 		this._submitBtn.addEventListener('submit', (e) => {
 			e.preventDefault();
 			const ip = this._inputIP.value.trim();
 			if (!ip) return;
-			console.log(ip);
 			handler(ip);
 		});
 	}
@@ -27,7 +25,6 @@ class InputView {
 	}
 
 	renderTimeoutError(err) {
-		console.log(err);
 		const markup = `
 				<div class="header__tracer-error">
 					<box-icon class="header__tracer-errorIcon" name='error' animation='flashing' ></box-icon>
