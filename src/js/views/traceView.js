@@ -1,3 +1,4 @@
+import MapView from './mapView.js';
 class InputView {
 	_data;
 	_submitBtn = document.querySelector('.header__form');
@@ -12,9 +13,13 @@ class InputView {
 		this._parentElement.insertAdjacentHTML('beforeend', markup);
 	}
 	addHandlerInput(handler) {
+		this._inputIP.focus();
 		this._submitBtn.addEventListener('submit', (e) => {
 			e.preventDefault();
 			const ip = this._inputIP.value.trim();
+			this._inputIP.value = '';
+			// this.clearMap();
+			MapView.clear();
 			if (!ip) return;
 			handler(ip);
 		});
@@ -24,7 +29,7 @@ class InputView {
 		this._parentElement.innerHTML = '';
 	}
 
-	renderTimeoutError(err) {
+	renderError(err) {
 		const markup = `
 				<div class="header__tracer-error">
 					<box-icon class="header__tracer-errorIcon" name='error' animation='flashing' ></box-icon>

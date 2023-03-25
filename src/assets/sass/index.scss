@@ -19,6 +19,8 @@ header {
     flex-direction: column;
     align-items: center;
     padding-block: 2rem;
+    position: relative;
+    z-index: 1000;
     @media (min-width: 992px) {
         height: 34vh;
     }
@@ -144,6 +146,5 @@ main {
     }
     #map {
         height: 100%;
-        z-index: -1;
     }
 }
