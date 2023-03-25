@@ -1,3 +1,4 @@
+import markerIcon from '/src/assets/images/icon-location.svg';
 class MapView {
 	_data;
 	parentElement = document.querySelector('#map');
@@ -15,7 +16,6 @@ class MapView {
 	renderMap(coords) {
 		this.map && this.map.remove();
 
-		console.log(coords);
 		this.map = L.map('map').setView(coords, 13);
 
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -24,7 +24,12 @@ class MapView {
 				'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 		}).addTo(this.map);
 
-		L.marker(coords).addTo(this.map).openPopup();
+		const myIcon = L.icon({
+			iconUrl: markerIcon,
+			iconSize: [38, 50],
+		});
+
+		L.marker(coords, { icon: myIcon }).addTo(this.map);
 	}
 }
 

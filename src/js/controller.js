@@ -11,7 +11,6 @@ const controlTracer = async function (ip) {
 		await model.loadData(ip);
 		traceView.render(model.state);
 		mapView.render(model.state);
-		console.log(ip);
 	} catch (err) {
 		console.log(err);
 		traceView.renderError(err);

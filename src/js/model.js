@@ -20,8 +20,6 @@ export const loadData = async function (ip) {
 		state.location.postalCode = postalCode;
 		state.location.timezone = timezone;
 		state.location.coords = [lat, lng];
-		console.log(data);
-		console.log(state);
 	} catch (err) {
 		console.log(err);
 		throw new Error(err);

@@ -7,7 +7,6 @@ class InputView {
 
 	render(data) {
 		this._data = data;
-		console.log(this._data);
 		const markup = this._generateMarkup(this._data);
 		this._clear();
 		this._parentElement.insertAdjacentHTML('beforeend', markup);
@@ -18,7 +17,6 @@ class InputView {
 			e.preventDefault();
 			const ip = this._inputIP.value.trim();
 			this._inputIP.value = '';
-			// this.clearMap();
 			MapView.clear();
 			if (!ip) return;
 			handler(ip);
