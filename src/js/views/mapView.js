@@ -1,27 +1,25 @@
 import markerIcon from '/src/assets/images/icon-location.svg';
 class MapView {
-	_data;
 	parentElement = document.querySelector('#map');
+	map;
 
-	render(data) {
-		this._data = data;
-		console.log(this._data.location.coords);
-		this.renderMap(this._data.location.coords);
-	}
-
-	clear() {
-		this.parentElement.innerHTML = '';
-	}
-
-	renderMap(coords) {
+	/**
+	 * render the map to the DOM
+	 * @param {Array<latitude, longitude>} coords
+	 * @param {string} map_url - map url of leaflet
+	 * @param {string} attribution  - map attribution url
+	 * @this {object} instance of MapView
+	 * @repuires /src/assets/images/icon-location.svg
+	 * @public
+	 * @author Manish Mandal
+	 */
+	renderMap(coords, map_url, attribution) {
 		this.map && this.map.remove();
-
 		this.map = L.map('map').setView(coords, 13);
 
-		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		L.tileLayer(map_url, {
 			maxZoom: 19,
-			attribution:
-				'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+			attribution: `&copy; <a href="${attribution}">OpenStreetMap</a> contributors`,
 		}).addTo(this.map);
 
 		const myIcon = L.icon({
@@ -30,6 +28,15 @@ class MapView {
 		});
 
 		L.marker(coords, { icon: myIcon }).addTo(this.map);
+	}
+
+	/**
+	 * Clears map container before map renders
+	 * @this {Object}  An instance of MapView
+	 * @public
+	 */
+	clear() {
+		this.parentElement.innerHTML = '';
 	}
 }
 

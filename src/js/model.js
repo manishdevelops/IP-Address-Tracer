@@ -1,5 +1,5 @@
 import { API_KEY } from '/apikey.js';
-import { API_URL } from './config.js';
+import { API_URL, MAP_URL, ATTRIBUTION } from './config.js';
 import { getJSON } from './helpers.js';
 
 export const state = {
@@ -9,6 +9,13 @@ export const state = {
 	isp: '',
 };
 
+/**
+ * Fetch data of received ip address
+ * @param {string} ip - accepts an ip address
+ * @returns <Promise.<string>
+ * @requires view/helpers.getJSON
+ * @throws exception
+ */
 export const loadData = async function (ip) {
 	try {
 		const data = await getJSON(`${API_URL}${API_KEY}=${ip}`);
@@ -24,4 +31,15 @@ export const loadData = async function (ip) {
 		console.log(err);
 		throw new Error(err);
 	}
+};
+
+/**
+ * map urls
+ * @returns {object} - map urls for render
+ */
+export const mapUrls = function () {
+	return {
+		map_url: MAP_URL,
+		attribution: ATTRIBUTION,
+	};
 };

@@ -5,12 +5,25 @@ class InputView {
 	_inputIP = document.querySelector('#header__input');
 	_parentElement = document.querySelector('.header__tracer-data');
 
+	/**
+	 * Render received data to the DOM
+	 * @param {Object} data - accepts location information
+	 * @this {Object} - instance of MapView
+	 * @public
+	 */
 	render(data) {
 		this._data = data;
 		const markup = this._generateMarkup(this._data);
 		this._clear();
 		this._parentElement.insertAdjacentHTML('beforeend', markup);
 	}
+
+	/**
+	 * Add handler to the element
+	 * @param {function} handler - A callback function
+	 * @this {Object} An instance of traceView
+	 * @public
+	 */
 	addHandlerInput(handler) {
 		this._inputIP.focus();
 		this._submitBtn.addEventListener('submit', (e) => {
@@ -23,10 +36,17 @@ class InputView {
 		});
 	}
 
+	/**
+	 * clear the location data before rendering
+	 */
 	_clear() {
 		this._parentElement.innerHTML = '';
 	}
 
+	/**
+	 *render error markup to the DOM
+	 * @param {Object} err - aAn error Object
+	 */
 	renderError(err) {
 		const markup = `
 				<div class="header__tracer-error">
@@ -38,6 +58,9 @@ class InputView {
 		this._parentElement.insertAdjacentHTML('beforeend', markup);
 	}
 
+	/**
+	 * render load spinner before rendering data to the DOM
+	 */
 	renderSpinner() {
 		const markup = `
 		<div class="header__loader-container">
@@ -47,6 +70,12 @@ class InputView {
 		this._clear();
 		this._parentElement.insertAdjacentHTML('beforeend', markup);
 	}
+
+	/**
+	 * Returns a markup
+	 * @param {Object} data - An object of ip data
+	 * @returns {markup} A markup to be added to the DOM
+	 */
 	_generateMarkup(data) {
 		return `
 		<div class="header__detail-container">
