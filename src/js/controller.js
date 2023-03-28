@@ -5,6 +5,7 @@ import * as model from './model.js';
 import traceView from './views/traceView.js';
 import inputView from './views/traceView.js';
 import mapView from './views/mapView.js';
+
 const controlTracer = async function (ip) {
 	try {
 		// 1)render spinner before rendering data

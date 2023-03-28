@@ -1,5 +1,4 @@
-import { API_KEY } from '/apikey.js';
-import { API_URL, MAP_URL, ATTRIBUTION } from './config.js';
+import { API_URL, MAP_URL, ATTRIBUTION, API_KEY } from './config.js';
 import { getJSON } from './helpers.js';
 
 export const state = {
