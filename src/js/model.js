@@ -1,6 +1,6 @@
 import { API_URL, MAP_URL, ATTRIBUTION, API_KEY } from './config.js';
 import { getJSON } from './helpers.js';
-
+console.log(API_KEY);
 export const state = {
 	ipAddress: '',
 	location: {},
