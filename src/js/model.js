@@ -17,6 +17,7 @@ export const state = {
  */
 export const loadData = async function (ip) {
 	try {
+		console.log(ip);
 		const data = await getJSON(`${API_URL}${API_KEY}=${ip}`);
 		state.ipAddress = data.ip;
 		state.isp = data.isp;
@@ -26,6 +27,7 @@ export const loadData = async function (ip) {
 		state.location.postalCode = postalCode;
 		state.location.timezone = timezone;
 		state.location.coords = [lat, lng];
+		console.log(state);
 	} catch (err) {
 		console.log(err);
 		throw new Error(err);
