@@ -2,7 +2,7 @@ import MapView from './mapView.js';
 class InputView {
 	_data;
 	_submitBtn = document.querySelector('.header__form');
-	_inputIP = document.querySelector('#header__input');
+	_inputIP = document.querySelector('.header__input');
 	_parentElement = document.querySelector('.header__tracer-data');
 
 	/**

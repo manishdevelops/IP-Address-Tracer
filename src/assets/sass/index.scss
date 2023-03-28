@@ -38,7 +38,7 @@ header {
 
 form {
     margin-block-start: 1.5rem;
-    #header__input {
+    .header__input {
         width: min(500px, 68vw);
         padding-block: clamp(0.6rem, 0.455rem + 0.828vw, 1.2rem);
         outline: none;

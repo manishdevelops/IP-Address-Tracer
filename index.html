@@ -12,7 +12,7 @@
   <script defer src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
   
   <link rel="stylesheet" href="/src/assets/sass/index.scss">
-  <script defer type="module" src="/src/js/controller.js"></script>
+  <script type="module" src="/src/js/controller.js"></script>
 
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -24,7 +24,7 @@
     <h1 class="header__heading">IP Address Tracker</h1>
     <form action="#" class="header__form">
       <label for="ip"></label>
-      <input type="text" id="header__input" name="ip" placeholder="Search for any IP address or domain" autocomplete="off">
+      <input type="text" id="ip" class="header__input" name="ip" placeholder="Search for any IP address or domain" autocomplete="off">
       <button class="header__submit" type="submit">
         <img class="header__arrow" src="/src/assets/images/icon-arrow.svg" alt="arrow-icon">
       </button>
